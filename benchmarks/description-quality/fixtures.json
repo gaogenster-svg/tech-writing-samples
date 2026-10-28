@@ -1,0 +1,16 @@
+[
+ {"id":"plain","input":"Experienced deckhand required.","expected":"Experienced deckhand required.","purpose":"Preserve ordinary text"},
+ {"id":"inline-html","input":"<p>Experienced <strong>deckhand</strong> required.</p>","expected":"Experienced deckhand required.","purpose":"Remove inline markup"},
+ {"id":"entities","input":"Deck &amp; engineering experience required.","expected":"Deck & engineering experience required.","purpose":"Decode entities"},
+ {"id":"metadata","input":"**Position:** Deckhand\n**Location:** Spain\nExperienced deckhand required.","expected":"Experienced deckhand required.","purpose":"Exclude leading metadata from summary"},
+ {"id":"script","input":"<script>alert('x')</script><p>Experienced deckhand required.</p>","expected":"Experienced deckhand required.","purpose":"Exclude script body"},
+ {"id":"encoded-script","input":"&lt;script&gt;alert('x')&lt;/script&gt;<p>Experienced deckhand required.</p>","expected":"Experienced deckhand required.","purpose":"Handle encoded tags"},
+ {"id":"markdown-link","input":"Read the [role details](https://example.test/jobs/1).","expected":"Read the role details.","purpose":"Retain link text"},
+ {"id":"separate-blocks","input":"<p>Deckhand required.</p><p>Start immediately.</p>","expected":"Deckhand required. Start immediately.","purpose":"Keep a separator between paragraphs"},
+ {"id":"page-debris","input":"const menu = document.querySelector('#menu');\nExperienced deckhand required.","expected":"Experienced deckhand required.","purpose":"Remove a separate JavaScript line"},
+ {"id":"empty","input":"","expected":"","purpose":"Do not invent missing text"},
+ {"id":"markdown-image","input":"![Crew](https://example.test/crew.png)\nExperienced deckhand required.","expected":"Crew Experienced deckhand required.","purpose":"Retain image alt text without punctuation debris"},
+ {"id":"meaningful-cookie","input":"The chef must understand our cookie policy for allergy-safe baking.","expected":"The chef must understand our cookie policy for allergy-safe baking.","purpose":"Preserve a meaningful phrase that resembles navigation"},
+ {"id":"identifier","input":"Experience with engine_room systems required.","expected":"Experience with engine_room systems required.","purpose":"Preserve underscores in identifiers"},
+ {"id":"literal-comparison","input":"Keep temperature < 5 and pressure > 2 during inspection.","expected":"Keep temperature < 5 and pressure > 2 during inspection.","purpose":"Preserve literal comparison symbols"}
+]

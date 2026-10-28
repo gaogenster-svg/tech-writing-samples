@@ -39,3 +39,4 @@ The application separately calculates and stores a SHA-256 checksum. That stored
 The storage health check uses the same R2 request settings to write a temporary private object, read it back, and delete it. This checks basic storage connectivity and operations; it does not establish correctness for every file size, stream type, or SDK version.
 
 This note documents a compatibility investigation and implementation change. It does not include a standalone reproduction or benchmark dataset.
+

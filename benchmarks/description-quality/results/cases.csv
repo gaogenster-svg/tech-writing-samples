@@ -1,0 +1,29 @@
+case,method,expected,actual,passed
+plain,tag_stripping,Experienced deckhand required.,Experienced deckhand required.,True
+plain,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+inline-html,tag_stripping,Experienced deckhand required.,Experienced deckhand required.,True
+inline-html,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+entities,tag_stripping,Deck & engineering experience required.,Deck & engineering experience required.,True
+entities,adapted_normalizer,Deck & engineering experience required.,Deck & engineering experience required.,True
+metadata,tag_stripping,Experienced deckhand required.,**Position:** Deckhand **Location:** Spain Experienced deckhand required.,False
+metadata,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+script,tag_stripping,Experienced deckhand required.,alert('x')Experienced deckhand required.,False
+script,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+encoded-script,tag_stripping,Experienced deckhand required.,<script>alert('x')</script>Experienced deckhand required.,False
+encoded-script,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+markdown-link,tag_stripping,Read the role details.,Read the [role details](https://example.test/jobs/1).,False
+markdown-link,adapted_normalizer,Read the role details.,Read the role details.,True
+separate-blocks,tag_stripping,Deckhand required. Start immediately.,Deckhand required.Start immediately.,False
+separate-blocks,adapted_normalizer,Deckhand required. Start immediately.,Deckhand required. Start immediately.,True
+page-debris,tag_stripping,Experienced deckhand required.,const menu = document.querySelector('#menu'); Experienced deckhand required.,False
+page-debris,adapted_normalizer,Experienced deckhand required.,Experienced deckhand required.,True
+empty,tag_stripping,,,True
+empty,adapted_normalizer,,,True
+markdown-image,tag_stripping,Crew Experienced deckhand required.,![Crew](https://example.test/crew.png) Experienced deckhand required.,False
+markdown-image,adapted_normalizer,Crew Experienced deckhand required.,!Crew Experienced deckhand required.,False
+meaningful-cookie,tag_stripping,The chef must understand our cookie policy for allergy-safe baking.,The chef must understand our cookie policy for allergy-safe baking.,True
+meaningful-cookie,adapted_normalizer,The chef must understand our cookie policy for allergy-safe baking.,,False
+identifier,tag_stripping,Experience with engine_room systems required.,Experience with engine_room systems required.,True
+identifier,adapted_normalizer,Experience with engine_room systems required.,Experience with engineroom systems required.,False
+literal-comparison,tag_stripping,Keep temperature < 5 and pressure > 2 during inspection.,Keep temperature 2 during inspection.,False
+literal-comparison,adapted_normalizer,Keep temperature < 5 and pressure > 2 during inspection.,Keep temperature 2 during inspection.,False

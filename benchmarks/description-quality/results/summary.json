@@ -1,0 +1,31 @@
+{
+  "fixture_count": 14,
+  "fixture_sha256": "dda14c80035817cb0aff95fa7f1ffd04294568c3f6463a01454b095792793980",
+  "python": "3.12.14",
+  "implementation": "CPython",
+  "metric": "Exact summary-string equality against authored synthetic expectations",
+  "methods": {
+    "tag_stripping": {
+      "passed": 6,
+      "failed": [
+        "metadata",
+        "script",
+        "encoded-script",
+        "markdown-link",
+        "separate-blocks",
+        "page-debris",
+        "markdown-image",
+        "literal-comparison"
+      ]
+    },
+    "adapted_normalizer": {
+      "passed": 10,
+      "failed": [
+        "markdown-image",
+        "meaningful-cookie",
+        "identifier",
+        "literal-comparison"
+      ]
+    }
+  }
+}
